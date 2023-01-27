@@ -27,11 +27,11 @@ function SP(A,B,C,D,E,F,G,H,I,J,K) {
 }
 
 function IP(A,B,C,D,E,F,G,H,I,J,K) {
-    return 2/E*(1+G/2)*I
+    return 2/E*(1+G/2)*I*H*H/2
 }
 
 function COST(A,B,C,D,E,F,G,H,I,J,K) {
-    return (B/2)*C*D*(E/2)*F*G
+    return (B/2)*C*D*(E/2)*F*G*I*I
 }
 
 const btn = () => {
