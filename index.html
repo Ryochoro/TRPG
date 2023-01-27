@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Radio Button Sample</title>
+  <script type="text/javascript" src="keisan.js"></script>
+</head>
+<body>
+ 
+ 
+  <p>①依り代選択</p>
+  <label><input type="radio"  name="a" value="1" onchange="btn()" checked>腕</label>
+  <label><input type="radio"  name="a" value="1" onchange="btn()">脚</label>
+  <label><input type="radio"  name="a" value="2" onchange="btn()">その他体の部位</label>
+  <label><input type="radio"  name="a" value="2" onchange="btn()">物体</label>
+ 
+ <p>②系統付与</p>
+  <label><input type="radio"  name="b" value="1" onchange="btn()" checked>創</label>
+  <label><input type="radio"  name="b" value="1" onchange="btn()">破</label>
+  <label><input type="radio"  name="b" value="2" onchange="btn()">動</label>
+  <label><input type="radio"  name="b" value="3" onchange="btn()">操</label>
+ 
+ 
+ <p>③干渉形態</p>
+  <label><input type="radio" name="c" value="2" onchange="btn()" checked>人体（生物）干渉</label>
+  <label><input type="radio" name="c" value="2" onchange="btn()">物体干渉</label>
+  <label><input type="radio" name="c" value="25" onchange="btn()">概念干渉</label>
+  
+  
+ <p>④属性付与</p>
+  <label><input type="radio"  name="d" value="1" onchange="btn()" checked>１</label>
+  <label><input type="radio"  name="d" value="2" onchange="btn()">２</label>
+  <label><input type="radio"  name="d" value="3" onchange="btn()">３</label>
+  <label><input type="radio"  name="d" value="4" onchange="btn()">４</label>
+  
+  <p>⑤距離付与</p>
+  <label><input type="radio"  name="e" value="1" onchange="btn()" checked>近距離</label>
+  <label><input type="radio"  name="e" value="2" onchange="btn()">中距離</label>
+  <label><input type="radio"  name="e" value="3" onchange="btn()">遠距離</label>
+  
+ 
+  <p>⑥魔法効果範囲</p>
+  <label><input type="radio"  name="f" value="1" onchange="btn()" checked>1体</label>
+  <label><input type="radio"  name="f" value="3" onchange="btn()">エリア</label>
+  <label><input type="radio"  name="f" value="5" onchange="btn()">陣全体</label>
+  <label><input type="radio"  name="f" value="10" onchange="btn()">全体</label>
+ 
+  <p>⑦威力レベル</p>
+  <label><input type="radio"  name="g" value="0.5" onchange="btn()">Lv1</label>
+  <label><input type="radio"  name="g" value="1" onchange="btn()"checked>Lv2</label>
+  <label><input type="radio"  name="g" value="1.5" onchange="btn()">Lv3</label>
+  <label><input type="radio"  name="g" value="2.5" onchange="btn()">Lv4</label>
+  <label><input type="radio"  name="g" value="4" onchange="btn()">Lv5</label>
+  <label><input type="radio"  name="g" value="10" onchange="btn()">Lv6</label>
+  <label><input type="radio"  name="g" value="25" onchange="btn()">Lv7</label>
+  <label><input type="radio"  name="g" value="50" onchange="btn()">Lv8</label>
+  <label><input type="radio"  name="g" value="100" onchange="btn()">Lv9</label>
+  <label><input type="radio"  name="g" value="250" onchange="btn()">Lv10</label>
+ 
+  <p>⑧動作回数</p>
+  <label><input type="radio"  name="h" value="0.5" onchange="btn()">0回</label>
+  <label><input type="radio"  name="h" value="1" onchange="btn()" checked>1回</label>
+  <label><input type="radio"  name="h" value="2" onchange="btn()">2回</label>
+  <label><input type="radio"  name="h" value="3" onchange="btn()">3回</label>
+  <label><input type="radio"  name="h" value="4" onchange="btn()">4回</label>
+  <label><input type="radio"  name="h" value="5" onchange="btn()">5回</label>
+  <label><input type="radio"  name="h" value="6" onchange="btn()">6回</label>
+ 
+  <p>⑨動作難度</p>
+  <label><input type="radio"  name="i" value="1" onchange="btn()"checked>Lv1</label>
+  <label><input type="radio"  name="i" value="2" onchange="btn()">Lv2</label>
+  <label><input type="radio"  name="i" value="3" onchange="btn()">Lv3</label>
+  <label><input type="radio"  name="i" value="4" onchange="btn()">Lv4</label>
+  <label><input type="radio"  name="i" value="5" onchange="btn()">Lv5</label>
+ 
+  <p>⑩持続時間</p>
+  <label><input type="radio"  name="j" value="1" onchange="btn()" checked>1ターン、一瞬</label>
+  <label><input type="radio"  name="j" value="3" onchange="btn()">2ターン</label>
+  <label><input type="radio"  name="j" value="5" onchange="btn()">3ターン</label>
+  <label><input type="radio"  name="j" value="7" onchange="btn()">5ターン</label>
+ 
+  <p>⑪デメリット</p>
+  <label><input type="radio"  name="k" value="1" onchange="btn()">Lv1</label>
+  <label><input type="radio"  name="k" value="2" onchange="btn()"checked>Lv2</label>
+  <label><input type="radio"  name="k" value="3" onchange="btn()">Lv3</label>
+  <label><input type="radio"  name="k" value="4" onchange="btn()">Lv4</label>
+  <label><input type="radio"  name="k" value="5" onchange="btn()">Lv5</label>
+  <label><input type="radio"  name="k" value="6" onchange="btn()">Lv6</label>
+ 
+  <hr>
+  <p>SP</p>
+  <div id="result2">選択</div>
+  
+   <p>IP</p>
+  <div id="result3">選択</div>
+  
+   <p>COST</p>
+  <div id="result4">選択</div>
+</body>
+</html>
