@@ -31,7 +31,7 @@ function IP(A,B,C,D,E,F,G,H,I,J,K) {
 }
 
 function COST(A,B,C,D,E,F,G,H,I,J,K) {
-    return (B/2)*C*D*(E/2)*F*G*I*I
+    return (B/2)*C*D*(E/2)*F*G*I
 }
 
 const btn = () => {
