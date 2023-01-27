@@ -27,7 +27,7 @@ function SP(A,B,C,D,E,F,G,H,I,J,K) {
 }
 
 function IP(A,B,C,D,E,F,G,H,I,J,K) {
-    return 2/E*(1+G/2)*I*2*H
+    return (2/E*(G**2/2)*I*2*H)/2
 }
 
 function COST(A,B,C,D,E,F,G,H,I,J,K) {
