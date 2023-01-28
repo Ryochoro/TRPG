@@ -19,26 +19,38 @@ function intChamge(radios) {
 /i動作難度</p>
 /j持続時間</p>
 /kデメリット</p>
-/lサポート適正 1あり 0なし
+/m発動条件
+/n精密レベル
+
+/o詠唱時間  p魔法数  q追加効果
+/xサポート適正 1あり 0なし
 */
 
 
-function SP(A,B,C,D,E,F,G,H,I,J,K) {
+function SP(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 	var sp =0;
     sp = (A+B)*C*2*D*((E+1)/2)*F*G*((I+1)/2)*J/H/K;
-	return Math.ceil(sp)
+	return sp
 }
 
-function IP(A,B,C,D,E,F,G,H,I,J,K) {
+function IP(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 	var ip =0;
 	ip =  (2/E*(G**2/2)*I*2*(H/2))/2;
-    return Math.ceil(ip)
+    return ip
 }
 
-function COST(A,B,C,D,E,F,G,H,I,J,K) {
+function COST(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 	var cost = 0;
 	cost = (B/2)*C*D*(E/2)*F*((G**2))*((I**2)/2)*H*2;
-    return Math.ceil(cost)
+    return cost
+}
+
+function DEX(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
+	var dex = 0;
+	var ps = 0;
+	ps = 1-(1/N);
+	dex = ps*100;
+    return dex
 }
 
 const btn = () => {
@@ -53,8 +65,12 @@ const btn = () => {
     let docI = document.getElementsByName("i");
     let docJ = document.getElementsByName("j");
     let docK = document.getElementsByName("k");
-    let docL = document.getElementsByName("l");
     let docM = document.getElementsByName("m");
+    let docN = document.getElementsByName("n");
+    let docO = document.getElementsByName("o");
+    let docP = document.getElementsByName("p");
+    let docQ = document.getElementsByName("q");
+    let docX = document.getElementsByName("x");
 
     const numberA = intChamge(docA);
     const numberB = intChamge(docB);
@@ -67,12 +83,16 @@ const btn = () => {
     const numberI = intChamge(docI);
     const numberJ = intChamge(docJ);
     const numberK = intChamge(docK);
-    const numberL = intChamge(docL);
     const numberM = intChamge(docM);
+    const numberN = intChamge(docN);
+    const numberO = intChamge(docO);
+    const numberP = intChamge(docP);
+    const numberQ = intChamge(docQ);
+    const numberX = intChamge(docX);
 
-    document.getElementById("result2").textContent = SP(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberL,numberM);
-   document.getElementById("result3").textContent = IP(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberL,numberM);
- document.getElementById("result4").textContent = COST(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberL,numberM);
-document.getElementById("result5").textContent = COST(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberL,numberM);
+    document.getElementById("result2").textContent = SP(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberM, numberN,numberO, numberP,numberQ,numberX);
+   document.getElementById("result3").textContent = IP(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberM, numberN,numberO, numberP,numberQ,numberX);
+ document.getElementById("result4").textContent = COST(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberM, numberN,numberO, numberP,numberQ,numberX);
+document.getElementById("result5").textContent = DEX(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberM, numberN,numberO, numberP,numberQ,numberX);
 
 }
