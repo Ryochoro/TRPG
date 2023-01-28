@@ -26,19 +26,19 @@ function intChamge(radios) {
 function SP(A,B,C,D,E,F,G,H,I,J,K) {
 	var sp =0;
     sp = (A+B)*C*2*D*((E+1)/2)*F*G*((I+1)/2)*J/H/K;
-	return sp
+	return Math.ceil(sp)
 }
 
 function IP(A,B,C,D,E,F,G,H,I,J,K) {
 	var ip =0;
 	ip =  (2/E*(G**2/2)*I*2*(H/2))/2;
-    return ip
+    return Math.ceil(ip)
 }
 
 function COST(A,B,C,D,E,F,G,H,I,J,K) {
 	var cost = 0;
 	cost = (B/2)*C*D*(E/2)*F*((G**2))*((I**2)/2)*H*2;
-    return cost
+    return Math.ceil(cost)
 }
 
 const btn = () => {
@@ -73,5 +73,6 @@ const btn = () => {
     document.getElementById("result2").textContent = SP(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberL,numberM);
    document.getElementById("result3").textContent = IP(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberL,numberM);
  document.getElementById("result4").textContent = COST(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberL,numberM);
+document.getElementById("result5").textContent = COST(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberL,numberM);
 
 }
