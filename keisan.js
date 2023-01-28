@@ -19,7 +19,7 @@ function intChamge(radios) {
 /i動作難度</p>
 /j持続時間</p>
 /kデメリット</p>
-/l攻撃適正
+/lサポート適正 1あり 0なし
 */
 
 
@@ -30,11 +30,15 @@ function SP(A,B,C,D,E,F,G,H,I,J,K) {
 }
 
 function IP(A,B,C,D,E,F,G,H,I,J,K) {
-    return (2/E*(G**2/2)*I*2*(H/2))/2
+	var ip =0;
+	ip =  (2/E*(G**2/2)*I*2*(H/2))/2;
+    return ip
 }
 
 function COST(A,B,C,D,E,F,G,H,I,J,K) {
-    return (B/2)*C*D*(E/2)*F*((G**2))*((I**2)/2)*H*2
+	var cost = 0;
+	cost = (B/2)*C*D*(E/2)*F*((G**2))*((I**2)/2)*H*2;
+    return cost
 }
 
 const btn = () => {
@@ -50,6 +54,7 @@ const btn = () => {
     let docJ = document.getElementsByName("j");
     let docK = document.getElementsByName("k");
     let docL = document.getElementsByName("l");
+    let docM = document.getElementsByName("m");
 
     const numberA = intChamge(docA);
     const numberB = intChamge(docB);
@@ -63,9 +68,10 @@ const btn = () => {
     const numberJ = intChamge(docJ);
     const numberK = intChamge(docK);
     const numberL = intChamge(docL);
+    const numberM = intChamge(docM);
 
-    document.getElementById("result2").textContent = SP(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberL);
-   document.getElementById("result3").textContent = IP(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberL);
- document.getElementById("result4").textContent = COST(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberL);
+    document.getElementById("result2").textContent = SP(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberL,numberM);
+   document.getElementById("result3").textContent = IP(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberL,numberM);
+ document.getElementById("result4").textContent = COST(numberA, numberB,numberC, numberD,numberE, numberF,numberG, numberH,numberI, numberJ,numberK,numberL,numberM);
 
 }
