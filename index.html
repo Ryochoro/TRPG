@@ -7,7 +7,7 @@
 </head>
 <body>
  
-  <p>Ver. 0.0.6</p>
+  <p>Ver. 0.0.7</p>
  
   <p>①依り代選択</p>
   <label><input type="radio"  name="a" value="1" onchange="btn()" checked>腕 +1</label>
@@ -18,8 +18,10 @@
  <p>②系統付与</p>
   <label><input type="radio"  name="b" value="1" onchange="btn()" checked>創 +1</label>
   <label><input type="radio"  name="b" value="1" onchange="btn()">破 +1</label>
+  <label><input type="radio"  name="b" value="1" onchange="btn()">与 +1</label>
   <label><input type="radio"  name="b" value="2" onchange="btn()">動 +2</label>
   <label><input type="radio"  name="b" value="3" onchange="btn()">操 +3</label>
+  <label><input type="radio"  name="b" value="3" onchange="btn()">呼 +3</label>
  
  
  <p>③干渉形態</p>
@@ -81,7 +83,6 @@
   <label><input type="radio"  name="j" value="7" onchange="btn()">5ターン *7</label>
  
   <p>⑪デメリット</p>
-  <label><input type="radio"  name="k" value="0.2" onchange="btn()">Lv0 *0.2</label>
   <label><input type="radio"  name="k" value="1" onchange="btn()"checked>Lv1</label>
   <label><input type="radio"  name="k" value="2" onchange="btn()">Lv2</label>
   <label><input type="radio"  name="k" value="3" onchange="btn()">Lv3</label>
@@ -89,10 +90,15 @@
   <label><input type="radio"  name="k" value="5" onchange="btn()">Lv5</label>
   <label><input type="radio"  name="k" value="6" onchange="btn()">Lv6</label>
  
-  <p>⑫攻撃適正</p>
-  <label><input type="radio"  name="l" value="1" onchange="btn()"checked>あり</label>
-  <label><input type="radio"  name="l" value="0" onchange="btn()">なし</label>
+  <p>⑫サポート適正</p>
+  <label><input type="radio"  name="l" value="1" onchange="btn()">あり</label>
+  <label><input type="radio"  name="l" value="0" onchange="btn()"checked>なし</label>
  
+ <p>⑬発動条件</p>
+  <label><input type="radio"  name="m" value="1" onchange="btn()"checked>即時</label>
+  <label><input type="radio"  name="m" value="0" onchange="btn()">時間経過</label>
+  <label><input type="radio"  name="m" value="0" onchange="btn()">接触</label>
+  
  
   <hr>
   <p>SP</p>
