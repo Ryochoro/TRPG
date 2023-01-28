@@ -48,7 +48,9 @@ function COST(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 function DEX(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 	var dex = 0;
 	var ps = 0;
-	ps = 1-(1/N);
+	var xps = 0;
+	xps = (F+O)/(E*0.75+P**2)
+	ps = 1-(1/(xps*N));
 	dex = ps*100;
     return dex
 }
