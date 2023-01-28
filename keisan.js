@@ -50,7 +50,7 @@ function DEX(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 	var ps = 0;
 	var xps = 0;
 	xps = (F+O)/(E*0.75+P**2)
-	ps = 1-(1/(xps*N));
+	ps = 1-(1/(xps*N))*0.95;
 	dex = ps*100;
     return dex
 }
