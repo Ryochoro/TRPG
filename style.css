@@ -1,0 +1,18 @@
+/* select box style */
+#selectBox {
+    width: 70%;
+}
+.rBtnBox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* result style */
+#results {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 20%;
+    background-color: rgba(187, 181, 181, 0.7);
+    border: 2px solid black;
+}
