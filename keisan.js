@@ -29,14 +29,35 @@ function intChamge(radios) {
 
 function SP(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 	var sp =0;
-    sp = (A+B)*C*2*D*((E+1)/2)*F*G*((I+1)/2)*J/H/K;
+	var SA=0;
+	SA =
+    sp = SA;
 	return sp
 }
 
 function IP(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 	var ip =0;
-	ip =  (2/E*(G**2/2)*I*2*(H/2))/2;
-    return ip
+	var kazu = 0;
+	var IA = 0;
+	var IB = 0;
+	var IC = 0;
+	if (X==0){
+		IA = (A+1)/2;
+		kazu = G*IA/2;
+		
+		IB = ((0.5*G + 2*O)*(H*0.25+0.75) / ( 2/3*E + 3/4*F ))
+		IC = ((A**2) )/( Q * (0.2*J+0.8)* 2*M/3)
+		ip =  1.5*(I**2)*IB*IC/(0.25*N);
+		
+	}else{
+		
+		IA = (A+1)/2;
+		kazu = G*IA/3;
+		
+		
+		ip =  (2/E*(G**2/2)*I*2*(H/2))/4;
+	}
+    return kazu +"d" + ip
 }
 
 function COST(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
@@ -45,13 +66,14 @@ function COST(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
     return cost
 }
 
+
 function DEX(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 	var dex = 0;
 	var ps = 0;
 	var xps = 0;
 	xps = (F+O)/(E*0.75+P**2)
 	ps = 1-(1/(xps*N))*0.95;
-	dex = ps*100;
+	if(ps<0){dex=0;}else{dex = ps*100;}
     return dex
 }
 
