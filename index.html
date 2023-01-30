@@ -8,10 +8,10 @@
 </head>
 <body>
   <div id="selectBox"> 
-    <p>Ver. 0.1.0</p>
+    <p>Ver. 0.1.3</p>
     
     <p>A.依り代選択<br>
-    SP：増/威力：激増/ダイス数：微増</p>
+    SP：減/威力：激増/ダイス数：微増/コスト：増</p>
     <div class="rBtnBox">
       <label><input type="radio"  name="a" value="1" onchange="btn()" checked>腕 +1</label>
       <label><input type="radio"  name="a" value="1" onchange="btn()">脚 +1</label>
@@ -24,7 +24,7 @@
    
    
    <p>B.系統付与<br>
-    SP：増</p>
+    SP：増/コスト：増</p>
     <div class="rBtnBox">
     <label><input type="radio"  name="b" value="1" onchange="btn()" checked>創 +1</label>
     <label><input type="radio"  name="b" value="1" onchange="btn()">破 +1</label>
@@ -37,7 +37,7 @@
    
    
    <p>C.干渉形態<br>
-   SP：増<br>
+   SP：増/コスト：増<br>
     <label><input type="radio" name="c" value="2" onchange="btn()" checked>人体（生物）干渉 *2</label>
     <label><input type="radio" name="c" value="2" onchange="btn()">物体干渉 *2</label>
     <label><input type="radio" name="c" value="25" onchange="btn()">概念干渉 *2</label>
@@ -45,7 +45,7 @@
     
     
    <p>D.属性付与<br>
-   SP：増<br>
+   SP：増/コスト：微増<br>
     <label><input type="radio"  name="d" value="1" onchange="btn()" checked>１</label>
     <label><input type="radio"  name="d" value="2" onchange="btn()">２</label>
     <label><input type="radio"  name="d" value="3" onchange="btn()">３</label>
@@ -56,14 +56,14 @@
     
     
     <p>E.距離付与<br>
-    威力：微減/命中：減<br>
+    命中：減<br>
     <label><input type="radio"  name="e" value="1" onchange="btn()" checked>近距離 1</label>
     <label><input type="radio"  name="e" value="2" onchange="btn()">中距離 2</label>
     <label><input type="radio"  name="e" value="3" onchange="btn()">遠距離 3</label>
      </p>
    
     <p>F.魔法効果範囲<br>
-    SP：増/威力：微減/命中：増<br>
+    SP：増/威力：微減/命中：増/コスト：微増<br>
     <label><input type="radio"  name="f" value="1" onchange="btn()" checked>1体 *1</label>
     <label><input type="radio"  name="f" value="3" onchange="btn()">エリア *3</label>
     <label><input type="radio"  name="f" value="5" onchange="btn()">陣全体 *5</label>
@@ -72,7 +72,7 @@
    
    
     <p>G.威力レベル<br>
-    SP：増/威力：増/ダイス数：増<br>
+    SP：増/威力：増/ダイス数：増/コスト：増<br>
     <label><input type="radio"  name="g" value="0.5" onchange="btn()">Lv1 *0.5</label>
     <label><input type="radio"  name="g" value="1" onchange="btn()"checked>Lv2 *1</label>
     <label><input type="radio"  name="g" value="1.5" onchange="btn()">Lv3 *1.5</label>
@@ -87,7 +87,7 @@
    
    
     <p>H.動作回数<br>
-    SP：減/威力：微増<br>
+    SP：減/威力：微増/コスト：減<br>
     <label><input type="radio"  name="h" value="1" onchange="btn()" checked>1回</label>
     <label><input type="radio"  name="h" value="2" onchange="btn()">2回</label>
     <label><input type="radio"  name="h" value="3" onchange="btn()">3回</label>
@@ -98,7 +98,7 @@
    </p>
    
     <p>I.動作難度<br>
-    SP：増/威力：激増<br>
+    SP：増/威力：激増/コスト：激増<br>
     <label><input type="radio"  name="i" value="1" onchange="btn()"checked>Lv1</label>
     <label><input type="radio"  name="i" value="2" onchange="btn()">Lv2</label>
     <label><input type="radio"  name="i" value="3" onchange="btn()">Lv3</label>
@@ -108,7 +108,7 @@
    
    
     <p>J.持続時間<br>
-    SP：微増/威力：減<br>
+    SP：微増/威力：減/コスト：増<br>
     <label><input type="radio"  name="j" value="1" onchange="btn()" checked>1ターン、一瞬</label>
     <label><input type="radio"  name="j" value="3" onchange="btn()">2ターン *3</label>
     <label><input type="radio"  name="j" value="5" onchange="btn()">3ターン *5</label>
@@ -117,7 +117,7 @@
    
    
     <p>K.デメリット <br>
-     SP：激減/威力：激増<br>
+     SP：激減/威力：激増/コスト：減<br>
     <label><input type="radio"  name="k" value="1" onchange="btn()"checked>Lv1</label>
     <label><input type="radio"  name="k" value="2" onchange="btn()">Lv2</label>
     <label><input type="radio"  name="k" value="3" onchange="btn()">Lv3</label>
@@ -128,7 +128,7 @@
       </p>
    
    <p>M.発動条件<br>
-    威力：微減<br>
+    威力：微減/コスト：微増<br>
     <label><input type="radio"  name="m" value="1" onchange="btn()"checked>即時</label>
     <label><input type="radio"  name="m" value="2" onchange="btn()">時間経過</label>
     <label><input type="radio"  name="m" value="2" onchange="btn()">接触</label>
@@ -148,7 +148,7 @@
     
     
    <p>O.＊詠唱時間<br>
-   威力：増/命中：増<br>
+   威力：増/命中：増/コスト：微減<br>
     <label><input type="radio"  name="o" value="1" onchange="btn()"checked>なし</label>
     <label><input type="radio"  name="o" value="2" onchange="btn()">1ターン</label>
     <label><input type="radio"  name="o" value="3" onchange="btn()">2ターン</label>
@@ -157,7 +157,7 @@
    
    
    <p>P.＊魔法数<br>
-     命中：激減<br>
+     命中：激減/コスト：増<br>
     <label><input type="radio"  name="p" value="1" onchange="btn()"checked>1つ</label>
     <label><input type="radio"  name="p" value="2" onchange="btn()">２つ</label>
     <label><input type="radio"  name="p" value="3" onchange="btn()">３つ</label>
