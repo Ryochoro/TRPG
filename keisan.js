@@ -45,7 +45,7 @@ function IP(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 	var IB = 0;
 	var IC = 0;
 	if (X==0){
-		//サポート適正なし
+		
 		IA = (A+1)/2;
 		kazu = G*IA/2;
 		
@@ -54,7 +54,7 @@ function IP(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 		ip =  1.5*((I**2)/2+0.5)*IB*IC/(0.25*N);
 		
 	}else if  (X==1){
-		//サポート適正あり、付与無し
+	
 		IA = (A+1)/2;
 		kazu = G*IA/3+0.01;
 		
@@ -69,8 +69,7 @@ function IP(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 		IC = ((A*3) )/( Q * (0.2*J+0.8)* 2*M/3)
 		ip =  0.5*(I*0.25+0.75)*IB*IC/(0.25*N);
 	}
-    return kazu +"d" + ip
-	}
+
     return kazu +"d" + ip
 }
 
