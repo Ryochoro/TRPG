@@ -78,12 +78,25 @@ function COST(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 	var CA = 0;
 	var CB = 0;
 	var CC = 0;
+	
+	if (X<=1){
 	var AA = Math.ceil(A); 
 	CA = (AA*0.5+0.5)*(D*0.25+0.75) +(B*0.75+0.25)*C / (H**2)
 	CB = (F*0.3+0.7)*2+P / ((K**2)*(O*0.25+0.75))
 	CC = J*(M*0.4+0.6)/I
 	cost = G*CA*CB*CC;
     return cost
+    
+    }else{
+	
+	var AA = Math.ceil(A); 
+	CA = (AA*0.5+0.5)*(D*0.25+0.75) +(B*0.75+0.25)*C / (H**2)
+	CB = (F*0.3+0.7)*2+P / ((K**2)*(O*0.25+0.75))
+	CC = (J*0.2+0.8)*(M*0.4+0.6)/I
+	cost = G*CA*CB*CC;
+    return cost
+	
+	}
 }
 
 
