@@ -33,7 +33,7 @@ function SP(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 	
 	var AA = Math.ceil(A); 
 	
-	SA = ((AA+B)*(2*G) + (2*D+(J*0.5+0.5))*(F/2+0.5)) / H
+	SA = ((AA+B)*(3*G-1) + (2*D+(J*0.5+0.5))*(F/2+0.5)) / H
     sp = I*C*SA / (AA*((K**2)/2+0.5));
 	return sp
 }
@@ -48,17 +48,17 @@ function IP(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 		IA = (A+1)/2;
 		kazu = G*IA/2;
 		
-		IB = ((0.5*G + 2*O)*(H*0.1+0.9) / (  1+2/5*F+3/5 ))
+		IB = ((G + 2*O) / (  1+2/5*F+3/5 ))
 		IC = ((A*2) )/( Q * (0.2*J+0.8)* 2*M/3)
 		ip =  1.5*((I**2)/2+0.5)*IB*IC/(0.25*N);
 		
 	}else{
 		IA = (A+1)/2;
-		kazu = G*IA/3+0.01;
+		kazu = G*IA/5+0.01;
 		
-		IB = ((0.5*G + 2*O)*(H*0.2+0.8) / ( 1+2/5*F+3/5 ))
+		IB = ((0.5*G + 2*O) / ( 1+2/5*F+3/5 ))
 		IC = ((A*2) )/( Q * (0.2*J+0.8)* 2*M/3)
-		ip =  0.5*(I**2)*IB*IC/(0.25*N);
+		ip =  0.5*(I*0.25+0.75)*IB*IC/(0.25*N);
 	}
     return kazu +"d" + ip
 }
@@ -70,8 +70,8 @@ function COST(A,B,C,D,E,F,G,H,I,J,K,M,N,O,P,Q,X) {
 	var CC = 0;
 	var AA = Math.ceil(A); 
 	CA = (AA*0.5+0.5)*(D*0.25+0.75) +(B*0.75+0.25)*C / (H**2)
-	CB = (F*0.3+0.7)*((I**2))+P / (K*(O*0.25+0.75))
-	CC = J*(M*0.4+0.6)
+	CB = (F*0.3+0.7)*2+P / ((K**2)*(O*0.25+0.75))
+	CC = J*(M*0.4+0.6)/I
 	cost = G*CA*CB*CC;
     return cost
 }
