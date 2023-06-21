@@ -32,7 +32,7 @@ function SP(A,B,C,D,E,F,G,H,Ia,Ib,J,K,L,M,N,O,P,X) {
 	var SB = 0;
 	if (B==3){ //与
 	
-	SA = ( (A)*(3*G-1) + (2*D+(J*0.5+0.5))* F ) * C
+	SA = ( (A)*(3*G-1) + (2*D+(J*0.5+0.5))* (F*0.7+0.3) ) * C
     SB = A*(( (Ib**2)+ K*0.7 + H) /3+0.5) 
 	
 	}else{
@@ -56,148 +56,243 @@ function IP(A,B,C,D,E,F,G,H,Ia,Ib,J,K,L,M,N,O,P,X) {
 	var ID = 0;
 	var IE = 0;
 	var IF = 0;
+	var IG = 0;
+	var IH = 0;
+	var IIA = 0;
+	var IIB = 0;
+	var i = -1;
+	var ii =  -1;
+	var k = 0;
+	var kk = 0;
 	var mkazu = 0;
 	var mip = 0;
 	var HOSEI = 5;
 	if (B==1){ //創
 		
-		//IA = (A+1)/2;
-		//kazu = G*IA/2;
+		IA = G*(A+1)/4;
+		IB = G*(A+1)/8;
 		
-		//IB = ((G + 2*N) / (  1+2/5*F+3/5 ))
-		//IC = ((A*2) )/( P * (0.2*J+0.8)* 2*L/3)
-		//ip =  1.5*((Ia**2)/2+0.5)*IB*IC/(0.25*M); // I -> Ia
-		
-		IA = (A+1)/2;
-		kazu = G*IA/2;
-		
-		IB = (A+1)/2;
-		mkazu = G*IB/4;
-		
-		IC =( 0.8*G + 2*N ) * ( A*1.5 ) * (1.5*((Ia**2)/2+0.5)) * (L/2+0.5);
+		IC =( 0.9*G + 2*N ) * ( A*1.5 ) * (1.3*((Ia**2)/2+0.5)) * (L/2+0.5);
 		ID = ( 2/5*F +3/5 ) * ( P * (0.4*J+0.6) ) * (0.25*M);
 		
-		IE =( 0.5*G + 1.5*N ) * ( A*1.5 ) * (((Ia**2)/2+0.5)) * (L/2+0.5);
+		IE =( 0.5*G + 1.5*N ) * ( A*1.5 ) * (((Ia**2)/4+0.75)) * (L/2+0.5);
 		IF = ( 3/5*F +2/5 ) * ( P * (0.4*J+0.6) ) * (0.25*M)*2;
 		
 		
-		ip = IC / ID;
-		mip = IE / IF;
+		IG=IC / ID;
+		IIA = Math.ceil(IG);
+		
+		for (var j = IIA; j>0; j=j-k){
+		i++
+		k=8+4*i;
+		IIA=IIA-k;
+		}
+		
+		IH=IE / IF;
+		IIB = Math.ceil(IH);
+		
+		
+		for (var jj = IIB; jj>0; jj=jj-kk){
+		ii++
+		kk=8+4*ii;
+		IIB=IIB-kk;
+		}
+		
+		
+		kazu = i+1;
+		mkazu = ii+1;
+		ip = IG/(i+1);
+		mip = IH/(ii+1);
 		
 	}else if  (B==2){ //壊
 	
-		//IA = (A+1)/2;
-		//kazu = G*IA/3+0.01;
+		IA = G*(A+1)/4;
+		IB = G*(A+1)/8;
 		
-		//IB = ((0.5*G + 2*N) / ( 1+2/5*F+3/5 ))
-		//IC = ((A*2.5) )/( P * (0.2*J+0.8)* 2*L/3)
-		//ip =  0.5*(Ia**2/4+0.75)*IB*IC/(0.25*M); // I -> Ia
-		
-		
-		IA = (A+1)/2;
-		kazu = G*IA/2+0.01;
-		
-		IB = (A+1)/2;
-		mkazu = G*IB/4;
-		
-		IC =( 0.9*G + 2*N ) * ( A*1.5 ) * (1.5*((Ia**2)/2+0.5)) * (L/2+0.5);
+		IC =( 0.9*G + 2*N ) * ( A*1.5 ) * (1.3*((Ia**2)/2+0.5)) * (L/2+0.5);
 		ID = ( 2/5*F +3/5 ) * ( P * (0.4*J+0.6) ) * (0.25*M);
 		
-		IE =( 0.5*G + 1.5*N ) * ( A*1.5 ) * (((Ia**2)/2+0.5)) * (L/2+0.5);
+		IE =( 0.5*G + 1.5*N ) * ( A*1.5 ) * (((Ia**2)/4+0.25)) * (L/2+0.5);
 		IF = ( 3/5*F +2/5 ) * ( P * (0.4*J+0.6) ) * (0.25*M)*2;
 		
-		ip = IC / ID;
-		mip = IE / IF;
+		
+		IG=IC / ID;
+		IIA = Math.ceil(IG);
+		
+		for (var j = IIA; j>0; j=j-k){
+		i++
+		k=8+4*i;
+		IIA=IIA-k;
+		}
+		
+		IH=IE / IF;
+		IIB = Math.ceil(IH);
+		
+		
+		for (var jj = IIB; jj>0; jj=jj-kk){
+		ii++
+		kk=8+4*ii;
+		IIB=IIB-kk;
+		}
+		
+		
+		kazu = i+1;
+		mkazu = ii+1;
+		ip = IG/(i+1);
+		mip = IH/(ii+1);
 	
 	}else if (B==3){ //与
 		
 		
-		IA = (A+1)/2;
-		kazu = G*IA/3;
+		IA = G*(A+1)/4;
+		IB = G*(A+1)/8;
 		
-		IB = (A+1)/2;
-		mkazu = G*IB/5;
+		IC =( 0.5*G + 2*N ) * ( A*1.5 ) * (1.3*((Ia**2)/3+0.5)) * (L/2+0.5);
+		ID = ( 2/7*F +5/7 ) * ( P * (0.4*J+0.6) ) * (0.25*M);
 		
-		IC =( 0.4*G + 3*N-1 ) * ( A*1.5 ) * (((Ia**2)/2+0.5)) * (L/2+0.5);
-		ID = ( 1/5*F +3/5 ) * ( P * J ) * (0.25*M);
+		IE =( 0.3*G + 1.5*N ) * ( A*1.5 ) * (((Ia**2)/5+0.8)) * (L/2+0.5);
+		IF = ( 3/7*F +4/7 ) * ( P * (0.4*J+0.6) ) * (0.25*M)*2;
 		
-		IE =( 0.2*G + 1.5*N ) * ( A*1.5 ) * (0.8*((Ia**2)/2+0.5)) * (L/2+0.5);
-		IF = ( 2/5*F +2/5 ) * ( P * (0.4*J+0.6) ) * (0.25*M)*2;
 		
-		ip = IC / ID;
-		mip = IE / IF;
+		IG=IC / ID;
+		IIA = Math.ceil(IG);
+		
+		for (var j = IIA; j>0; j=j-k){
+		i++
+		k=8+4*i;
+		IIA=IIA-k;
+		}
+		
+		IH=IE / IF;
+		IIB = Math.ceil(IH);
+		
+		
+		for (var jj = IIB; jj>0; jj=jj-kk){
+		ii++
+		kk=8+4*ii;
+		IIB=IIB-kk;
+		}
+		
+		
+		kazu = i+1;
+		mkazu = ii+1;
+		ip = IG/(i+1);
+		mip = IH/(ii+1);
+		
 		
 	}else if  (B==4){ //動
 	
-		//IA = (A+1)/2;
-		//kazu = G*IA/3+0.01;
+		IA = G*(A+1)/4;
+		IB = G*(A+1)/8;
 		
-		//IB = ((0.5*G + 2*N) / ( 1+2/5*F+3/5 ))
-		//IC = ((A*2.5) )/( P * (0.2*J+0.8)* 2*L/3)
-		//ip =  0.5*(Ia**2/4+0.75)*IB*IC/(0.25*M); // I -> Ia
-		
-		
-		IA = (A+1)/2;
-		kazu = G*IA/2;
-		
-		IB = (A+1)/2;
-		mkazu = G*IB/4;
-		
-		IC =( 0.8*G + 2*N ) * ( A*1.5 ) * (1.5*((Ia**2)/2+0.5)) * (L/2+0.5);
+		IC =( 0.9*G + 2*N ) * ( A*1.5 ) * (1.3*((Ia**2)/2+0.5)) * (L/2+0.5);
 		ID = ( 2/5*F +3/5 ) * ( P * (0.4*J+0.6) ) * (0.25*M);
 		
-		IE =( 0.5*G + 1.5*N ) * ( A*1.5 ) * (((Ia**2)/2+0.5)) * (L/2+0.5);
+		IE =( 0.5*G + 1.5*N ) * ( A*1.5 ) * (((Ia**2)/4+0.25)) * (L/2+0.5);
 		IF = ( 3/5*F +2/5 ) * ( P * (0.4*J+0.6) ) * (0.25*M)*2;
 		
-		ip = IC / ID;
-		mip = IE / IF;
+		
+		IG=IC / ID;
+		IIA = Math.ceil(IG);
+		
+		for (var j = IIA; j>0; j=j-k){
+		i++
+		k=8+4*i;
+		IIA=IIA-k;
+		}
+		
+		IH=IE / IF;
+		IIB = Math.ceil(IH);
+		
+		
+		for (var jj = IIB; jj>0; jj=jj-kk){
+		ii++
+		kk=8+4*ii;
+		IIB=IIB-kk;
+		}
+		
+		
+		kazu = i+1;
+		mkazu = ii+1;
+		ip = IG/(i+1);
+		mip = IH/(ii+1);
 		
 	
 	
 	}else if  (B==5){ //変
 	
-		//IA = (A+1)/2;
-		//kazu = G*IA/3+0.01;
+		IA = G*(A+1)/4;
+		IB = G*(A+1)/8;
 		
-		//IB = ((0.5*G + 2*N) / ( 1+2/5*F+3/5 ))
-		//IC = ((A*2.5) )/( P * (0.2*J+0.8)* 2*L/3)
-		//ip =  0.5*(Ia**2/4+0.75)*IB*IC/(0.25*M); // I -> Ia
-		
-		
-		IA = (A+1)/2;
-		kazu = G*IA/2;
-
-		
-		IC =( 0.8*G + 2*N ) * ( A*1.5 ) * (1.5*((Ia**2)/2+0.5)) * (L/2+0.5);
+		IC =( 0.9*G + 2*N ) * ( A*1.5 ) * (1.3*((Ia**2)/2+0.5)) * (L/2+0.5);
 		ID = ( 2/5*F +3/5 ) * ( P * (0.4*J+0.6) ) * (0.25*M);
 		
-		ip = IC / ID;
+		IE =( 0.5*G + 1.5*N ) * ( A*1.5 ) * (((Ia**2)/4+0.25)) * (L/2+0.5);
+		IF = ( 3/5*F +2/5 ) * ( P * (0.4*J+0.6) ) * (0.25*M)*2;
+		
+		
+		IG=IC / ID;
+		IIA = Math.ceil(IG);
+		
+		for (var j = IIA; j>0; j=j-k){
+		i++
+		k=8+4*i;
+		IIA=IIA-k;
+		}
+		
+		IH=IE / IF;
+		IIB = Math.ceil(IH);
+		
+		
+		for (var jj = IIB; jj>0; jj=jj-kk){
+		ii++
+		kk=8+4*ii;
+		IIB=IIB-kk;
+		}
+		
+		
+		kazu = i+1;
+		mkazu = ii+1;
+		ip = IG/(i+1);
+		mip = IH/(ii+1);
 
 	
 	}else if  (B==6){ //操
 	
-		//IA = (A+1)/2;
-		//kazu = G*IA/3+0.01;
+		IA = G*(A+1)/4;
+		IB = G*(A+1)/8;
 		
-		//IB = ((0.5*G + 2*N) / ( 1+2/5*F+3/5 ))
-		//IC = ((A*2.5) )/( P * (0.2*J+0.8)* 2*L/3)
-		//ip =  0.5*(Ia**2/4+0.75)*IB*IC/(0.25*M); // I -> Ia
-		
-		
-		IA = (A+1)/2;
-		kazu = G*IA/2;
-		
-		IB = (A+1)/2;
-		mkazu = G*IB/4;
-		
-		IC =( 0.8*G + 2*N ) * ( A*1.5 ) * (1.5*((Ia**2)/2+0.5)) * (L/2+0.5);
+		IC =( 0.9*G + 2*N ) * ( A*1.5 ) * (1.3*((Ia**2)/2+0.5)) * (L/2+0.5);
 		ID = ( 2/5*F +3/5 ) * ( P * (0.4*J+0.6) ) * (0.25*M);
 		
-		IE =( 0.5*G + 1.5*N ) * ( A*1.5 ) * (((Ia**2)/2+0.5)) * (L/2+0.5);
+		IE =( 0.5*G + 1.5*N ) * ( A*1.5 ) * (((Ia**2)/4+0.25)) * (L/2+0.5);
 		IF = ( 3/5*F +2/5 ) * ( P * (0.4*J+0.6) ) * (0.25*M)*2;
 		
-		ip = IC / ID;
-		mip = IE / IF;
+		
+		IG=IC / ID;
+		IIA = Math.ceil(IG);
+		
+		for (var j = IIA; j>0; j=j-k){
+		i++
+		k=8+4*i;
+		IIA=IIA-k;
+		}
+		
+		IH=IE / IF;
+		IIB = Math.ceil(IH);
+		
+		
+		for (var jj = IIB; jj>0; jj=jj-kk){
+		ii++
+		kk=8+4*ii;
+		IIB=IIB-kk;
+		}
+		
+		
+		kazu = i+1;
+		mkazu = ii+1;
+		ip = IG/(i+1);
+		mip = IH/(ii+1);
 		
 	
 	}else if  (B==7){ //呼
